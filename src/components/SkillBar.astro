@@ -2,11 +2,11 @@
 interface Props {
   name: string;
   years: number;
-  maxYears?: number;
+  level: number;
 }
 
-const { name, years, maxYears = 20 } = Astro.props;
-const filled = Math.round((years / maxYears) * 20);
+const { name, years, level } = Astro.props;
+const filled = level * 2;
 const empty = 20 - filled;
 const bar = '\u2588'.repeat(filled) + '\u2591'.repeat(empty);
 ---

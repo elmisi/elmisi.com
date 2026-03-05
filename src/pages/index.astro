@@ -60,7 +60,7 @@ import skills from '../data/skills.json';
         <span class="command"> cat skills.txt</span>
       </div>
       {skills.primary.map(s => (
-        <SkillBar name={s.name} years={s.years} />
+        <SkillBar name={s.name} years={s.years} level={s.level} />
       ))}
       <div style="margin-top: var(--space-3)">
         <span class="comment"># also:</span>

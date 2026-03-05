@@ -1,11 +1,11 @@
 {
   "primary": [
-    { "name": "Python/Django", "years": 9 },
-    { "name": "JavaScript", "years": 6 },
-    { "name": "Docker", "years": 8 },
-    { "name": "DevOps", "years": 8 },
-    { "name": "PostgreSQL", "years": 10 },
-    { "name": "AI Tools", "years": 2 }
+    { "name": "Python/Django", "years": 9, "level": 9 },
+    { "name": "JavaScript", "years": 6, "level": 7 },
+    { "name": "Docker", "years": 8, "level": 8 },
+    { "name": "DevOps", "years": 8, "level": 8 },
+    { "name": "PostgreSQL", "years": 10, "level": 10 },
+    { "name": "AI Tools", "years": 2, "level": 6 }
   ],
   "secondary": [
     "Node.js", "Ember.js", "FastAPI", "Flask",
