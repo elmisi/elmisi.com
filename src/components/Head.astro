@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+}
+
+const { title, description, canonicalPath = '' } = Astro.props;
+const siteUrl = 'https://elmisi.com';
+const canonicalUrl = `${siteUrl}${canonicalPath}`;
+const fullTitle = title === 'Home' ? 'Alessandro Misiti | Senior Software Engineer' : `${title} | Alessandro Misiti`;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="preload" href="/fonts/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={`${siteUrl}/images/og-image.png`} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+
+<!-- JSON-LD -->
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alessandro Misiti",
+  "url": siteUrl,
+  "jobTitle": "Senior Software Engineer",
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "Politecnico di Torino"
+  },
+  "knowsAbout": ["Python", "Django", "JavaScript", "Docker", "DevOps", "AI"],
+  "sameAs": [
+    "https://github.com/elmisi",
+    "https://www.linkedin.com/in/alessandromisiti/"
+  ]
+})} />

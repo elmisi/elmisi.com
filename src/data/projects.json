@@ -1,0 +1,108 @@
+{
+  "live": [
+    {
+      "name": "Watch U Want",
+      "url": "https://watch-u-want.com",
+      "description": "AI-powered movie recommendation app. Suggests what to watch based on your mood and preferences.",
+      "tech": ["Python", "PostgreSQL", "Redis", "AI"]
+    },
+    {
+      "name": "CelticAL",
+      "url": "https://www.celtical.it",
+      "description": "AI-generated Celtic knot art. Creates unique interlaced patterns daily using local Stable Diffusion models.",
+      "tech": ["Python", "Stable Diffusion", "Docker", "Nginx"]
+    },
+    {
+      "name": "De-Sidera",
+      "url": "https://de-sidera.com",
+      "description": "Wishlist application. Create, manage and share wishlists with friends and family.",
+      "tech": ["Python", "PostgreSQL", "Nginx"]
+    },
+    {
+      "name": "Tasks",
+      "url": "https://tasks.elmisi.com",
+      "description": "Trello-style kanban board for task management. FastAPI backend with React frontend.",
+      "tech": ["FastAPI", "React", "PostgreSQL"]
+    },
+    {
+      "name": "Ambush",
+      "url": "https://ambush.elmisi.com",
+      "description": "Webhook testing tool. Inspect, debug and replay incoming HTTP requests in real time.",
+      "tech": ["FastAPI", "React", "Redis"]
+    },
+    {
+      "name": "Amelia",
+      "url": "https://amelia.elmisi.com",
+      "description": "Document sharing platform with origin isolation for secure collaborative editing.",
+      "tech": ["Python", "Docker"]
+    },
+    {
+      "name": "Amphora Hours",
+      "url": "https://amphora.elmisi.com",
+      "description": "Time tracking application for managing working hours and project time allocation.",
+      "tech": ["FastAPI", "PostgreSQL"]
+    },
+    {
+      "name": "Ranker",
+      "url": "https://ranker.elmisi.com",
+      "description": "Product comparison and ranking tool. Rate and sort products by custom criteria.",
+      "tech": ["Python", "Docker"]
+    },
+    {
+      "name": "Listo",
+      "url": "https://listo.elmisi.com",
+      "description": "Shopping list PWA. Installable progressive web app for shared grocery lists.",
+      "tech": ["JavaScript", "PWA", "Nginx"]
+    },
+    {
+      "name": "Tray",
+      "url": "https://tray.elmisi.com",
+      "description": "Text sharing service. Quickly share text snippets with a simple, clean interface.",
+      "tech": ["Python", "Docker"]
+    },
+    {
+      "name": "7Diet",
+      "url": "https://7diet.elmisi.com",
+      "description": "Diet tracking and meal planning app. Plan your weekly meals and track nutrition.",
+      "tech": ["Python", "PostgreSQL", "Nginx"]
+    },
+    {
+      "name": "Powder",
+      "url": "https://powder.elmisi.com",
+      "description": "Powder application.",
+      "tech": ["Python", "Docker"]
+    }
+  ],
+  "github": [
+    {
+      "name": "amenity-stuff",
+      "url": "https://github.com/elmisi/amenity-stuff",
+      "description": "File organizer powered by local LLMs via Ollama. Automatic categorization and renaming with interactive TUI.",
+      "tech": ["Python", "Ollama", "Textual"]
+    },
+    {
+      "name": "ollama-cli-tui",
+      "url": "https://github.com/elmisi/ollama-cli-tui",
+      "description": "Keyboard-first TUI for managing Ollama models. Discovery of 200+ models, version selection, GPU/CPU monitoring.",
+      "tech": ["Python", "Textual", "Ollama"]
+    },
+    {
+      "name": "american-dedup",
+      "url": "https://github.com/elmisi/american-dedup",
+      "description": "Duplicate file manager with TUI. Priority-based deduplication using fdupes, safety-first design (never deletes).",
+      "tech": ["Python", "Textual", "fdupes"]
+    },
+    {
+      "name": "claude-code-automation",
+      "url": "https://github.com/elmisi/claude-code-automation",
+      "description": "Expert advisor plugin for Claude Code. Interview system, decision matrix, file generation with schema validation.",
+      "tech": ["HTML", "JavaScript"]
+    },
+    {
+      "name": "misipwgen",
+      "url": "https://github.com/elmisi/misipwgen",
+      "description": "Multilingual pronounceable password generator. Italian and Spanish support, syllable-based construction, web interface.",
+      "tech": ["Python", "NLP"]
+    }
+  ]
+}

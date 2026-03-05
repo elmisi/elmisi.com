@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Terminal from '../components/Terminal.astro';
+import TimelineEntry from '../components/TimelineEntry.astro';
+import data from '../data/experience.json';
+---
+
+<BaseLayout
+  title="Experience"
+  description="25+ years of professional experience in web development. From backend engineering to technical direction, with roles at Bakeca.it, Djungle, EXOP, and more."
+  canonicalPath="/experience/"
+>
+  <section class="section">
+    <div class="section-header">
+      <span class="prompt">visitor@elmisi.com:~$</span>
+      <span class="command"> git log --oneline career</span>
+    </div>
+
+    <Terminal title="git log">
+      {data.positions.map((pos, i) => (
+        <TimelineEntry
+          hash={pos.hash}
+          role={pos.role}
+          company={pos.company}
+          period={pos.period}
+          description={pos.description}
+          highlights={pos.highlights}
+          tech={pos.tech}
+          isHead={i === 0}
+        />
+      ))}
+    </Terminal>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="prompt">visitor@elmisi.com:~$</span>
+      <span class="command"> cat education.txt</span>
+    </div>
+
+    <Terminal title="education.txt">
+      {data.education.map(edu => (
+        <div class="edu-entry">
+          <div>
+            <span class="highlight">{edu.year}</span>
+            <span class="command"> {edu.title}</span>
+          </div>
+          <div class="output edu-detail">
+            {edu.institution}
+          </div>
+        </div>
+      ))}
+    </Terminal>
+  </section>
+</BaseLayout>
+
+<style>
+  .section-header {
+    margin-bottom: var(--space-3);
+  }
+  .edu-entry {
+    margin-bottom: var(--space-3);
+  }
+  .edu-entry:last-child {
+    margin-bottom: 0;
+  }
+  .edu-detail {
+    padding-left: 2ch;
+  }
+</style>

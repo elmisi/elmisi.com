@@ -1,0 +1,56 @@
+---
+interface Props {
+  hash: string;
+  role: string;
+  company: string;
+  period: string;
+  description: string;
+  highlights: string[];
+  tech: string[];
+  isHead?: boolean;
+}
+
+const { hash, role, company, period, description, highlights, tech, isHead = false } = Astro.props;
+---
+
+<div class="timeline-entry">
+  <div class="commit-line">
+    <span class="highlight">commit {hash}</span>
+    {isHead && <span class="head"> (HEAD -&gt; career)</span>}
+  </div>
+  <div class="output">Author: Alessandro Misiti</div>
+  <div class="output">Date:&nbsp;&nbsp; {period}</div>
+  <div class="commit-msg">
+    <div class="command">{role} @ {company}</div>
+    {description && <div class="output">{description}</div>}
+    {highlights.map(h => <div class="output">- {h}</div>)}
+    <div class="commit-tech">
+      {tech.map(t => <span class="tag tag--green">{t}</span>)}
+    </div>
+  </div>
+</div>
+
+<style>
+  .timeline-entry {
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border);
+  }
+  .timeline-entry:last-child {
+    border-bottom: none;
+  }
+  .commit-line {
+    margin-bottom: 2px;
+  }
+  .head {
+    color: var(--accent-cyan);
+    font-weight: 700;
+  }
+  .commit-msg {
+    padding-left: 2ch;
+    margin-top: var(--space-1);
+  }
+  .commit-tech {
+    margin-top: var(--space-1);
+  }
+</style>

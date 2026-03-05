@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import projects from '../data/projects.json';
+---
+
+<BaseLayout
+  title="Projects"
+  description="Portfolio of live web services and open source projects by Alessandro Misiti. 12 self-hosted apps and 6+ GitHub repositories."
+  canonicalPath="/projects/"
+>
+  <section class="section">
+    <div class="section-header">
+      <span class="prompt">visitor@elmisi.com:~$</span>
+      <span class="command"> ls -la projects/live/</span>
+    </div>
+    <div class="output section-count">total {projects.live.length} services -- all self-hosted on a single VPS</div>
+    <div class="grid">
+      {projects.live.map(p => (
+        <ProjectCard
+          name={p.name}
+          description={p.description}
+          url={p.url}
+          tech={p.tech}
+          type="live"
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="prompt">visitor@elmisi.com:~$</span>
+      <span class="command"> ls ~/github/</span>
+    </div>
+    <div class="grid">
+      {projects.github.map(p => (
+        <ProjectCard
+          name={p.name}
+          description={p.description}
+          url={p.url}
+          tech={p.tech}
+          type="github"
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .section-header {
+    margin-bottom: var(--space-1);
+  }
+  .section-count {
+    margin-bottom: var(--space-3);
+    font-size: 0.8125rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+  @media (max-width: 700px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

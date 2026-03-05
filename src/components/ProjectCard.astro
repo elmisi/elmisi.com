@@ -1,0 +1,76 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  url: string;
+  tech: string[];
+  type: 'live' | 'github';
+}
+
+const { name, description, url, tech, type } = Astro.props;
+const command = type === 'live' ? `open ${url.replace('https://', '')}` : `gh repo view ${name}`;
+---
+
+<div class="project-card">
+  <div class="project-header">
+    <span class="project-name">{name}</span>
+    <span class="project-type">{type === 'live' ? 'LIVE' : 'OSS'}</span>
+  </div>
+  <div class="project-desc output">{description}</div>
+  <div class="project-tech">
+    {tech.map(t => <span class="tag tag--green">{t}</span>)}
+  </div>
+  <div class="project-link">
+    <span class="prompt">$</span> <a href={url} target="_blank" rel="noopener" class="command">{command}</a>
+  </div>
+</div>
+
+<style>
+  .project-card {
+    background: var(--bg-terminal);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    transition: border-color 0.2s;
+  }
+  .project-card:hover {
+    border-color: var(--accent-green-dim);
+  }
+  .project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .project-name {
+    color: var(--accent-cyan);
+    font-weight: 700;
+  }
+  .project-type {
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0 6px;
+    border-radius: 3px;
+  }
+  .project-desc {
+    flex: 1;
+    font-size: 0.8125rem;
+  }
+  .project-tech {
+    margin: var(--space-1) 0;
+  }
+  .project-link {
+    font-size: 0.8125rem;
+    padding-top: var(--space-1);
+    border-top: 1px solid var(--border);
+  }
+  .project-link a {
+    color: var(--text-primary);
+  }
+  .project-link a:hover {
+    color: var(--accent-green);
+  }
+</style>

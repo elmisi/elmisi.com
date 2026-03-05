@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Terminal from '../components/Terminal.astro';
+import SkillBar from '../components/SkillBar.astro';
+import skills from '../data/skills.json';
+---
+
+<BaseLayout
+  title="Home"
+  description="Alessandro Misiti - Senior Software Engineer with 25+ years of experience. Python, Django, Docker, DevOps, AI-native development. Based in Turin, Italy."
+  canonicalPath="/"
+>
+  <section class="section">
+    <pre class="ascii-art" aria-hidden="true">{`
+       _           _     _
+   ___| |_ __ ___ (_)___(_)
+  / _ \\ | '_ \` _ \\| / __| |
+ |  __/ | | | | | | \\__ \\ |
+  \\___|_|_| |_| |_|_|___/_|`}</pre>
+  </section>
+
+  <section class="section">
+    <Terminal title="about.txt">
+      <div>
+        <span class="prompt">visitor@elmisi.com:~$</span>
+        <span class="command"> whoami</span>
+      </div>
+      <div class="output" style="margin-bottom: var(--space-3)">
+        <strong>Alessandro Misiti</strong> -- Senior Software Engineer
+      </div>
+
+      <div>
+        <span class="prompt">visitor@elmisi.com:~$</span>
+        <span class="command"> cat bio.txt</span>
+      </div>
+      <div class="output" data-typing style="visibility: hidden; margin-bottom: var(--space-3)">Around midnight, when most people are asleep, I'm usually writing code. Good or bad, it somehow ends up working. These days, I do it with AI copilots by my side.</div>
+      <noscript>
+        <style>.output[data-typing] { visibility: visible !important; }</style>
+      </noscript>
+
+      <div>
+        <span class="prompt">visitor@elmisi.com:~$</span>
+        <span class="command"> cat stats.txt</span>
+      </div>
+      <div class="output">
+        <div class="stat-row"><span class="stat-label">Experience:</span> 25+ years in web development</div>
+        <div class="stat-row"><span class="stat-label">Degree:</span> Computer Science Engineering, Politecnico di Torino</div>
+        <div class="stat-row"><span class="stat-label">Location:</span> Turin, Italy</div>
+        <div class="stat-row"><span class="stat-label">Focus:</span> Python/Django, JavaScript, Docker, DevOps</div>
+        <div class="stat-row"><span class="stat-label">Current edge:</span> AI-native development (Claude Code, Codex, Gemini CLI)</div>
+        <div class="stat-row"><span class="stat-label">Side projects:</span> 12 live services, 6+ open source repos</div>
+      </div>
+    </Terminal>
+  </section>
+
+  <section class="section">
+    <Terminal title="skills.txt">
+      <div style="margin-bottom: var(--space-2)">
+        <span class="prompt">visitor@elmisi.com:~$</span>
+        <span class="command"> cat skills.txt</span>
+      </div>
+      {skills.primary.map(s => (
+        <SkillBar name={s.name} years={s.years} />
+      ))}
+      <div style="margin-top: var(--space-3)">
+        <span class="comment"># also:</span>
+        <div class="output">{skills.secondary.join(' \u00b7 ')}</div>
+      </div>
+    </Terminal>
+  </section>
+
+  <section class="section">
+    <Terminal title="ai-workflow.log">
+      <div style="margin-bottom: var(--space-2)">
+        <span class="prompt">visitor@elmisi.com:~$</span>
+        <span class="command"> cat ai-workflow.log</span>
+      </div>
+      <div class="output" style="margin-bottom: var(--space-2)">
+        <span class="comment"># Real data from my Claude Code usage (Sep 2025 - Mar 2026)</span>
+      </div>
+      <div class="ai-stats">
+        <div class="ai-stat-row">
+          <span class="ai-stat-value">5,000+</span>
+          <span class="output">AI pair-programming sessions</span>
+        </div>
+        <div class="ai-stat-row">
+          <span class="ai-stat-value">43</span>
+          <span class="output">avg prompts/day across 15+ projects</span>
+        </div>
+        <div class="ai-stat-row">
+          <span class="ai-stat-value">75%</span>
+          <span class="output">days active (118 out of 157)</span>
+        </div>
+        <div class="ai-stat-row">
+          <span class="ai-stat-value">19</span>
+          <span class="output">longest daily streak</span>
+        </div>
+      </div>
+      <div style="margin-top: var(--space-3)">
+        <span class="comment"># peak activity by hour</span>
+      </div>
+      <div class="hour-chart">
+        <div class="hour-row"><span class="hour-label">09-13</span><span class="hour-bar morning">{"█".repeat(16)}</span><span class="output"> work</span></div>
+        <div class="hour-row"><span class="hour-label">14-18</span><span class="hour-bar afternoon">{"█".repeat(18)}</span><span class="output"> deep focus</span></div>
+        <div class="hour-row"><span class="hour-label">19-21</span><span class="hour-bar evening">{"█".repeat(6)}</span><span class="output"> break</span></div>
+        <div class="hour-row"><span class="hour-label">22-01</span><span class="hour-bar night">{"█".repeat(24)}</span><span class="output"> midnight flow</span></div>
+      </div>
+      <div style="margin-top: var(--space-2)">
+        <span class="comment"># 38% of all sessions happen between 22:00 and 03:00</span>
+      </div>
+      <div style="margin-top: var(--space-2)">
+        <span class="comment"># tools: Claude Code, Codex, Gemini CLI</span>
+      </div>
+    </Terminal>
+  </section>
+
+  <section class="section">
+    <div>
+      <span class="prompt">visitor@elmisi.com:~$</span>
+      <span class="command"> ls</span>
+      <span class="cursor"></span>
+    </div>
+    <div class="nav-hint">
+      <a href="/projects/">projects/</a>
+      <a href="/experience/">experience/</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<script src="../scripts/typing.js"></script>
+
+<style>
+  .stat-row {
+    display: flex;
+    gap: var(--space-2);
+  }
+  .stat-label {
+    color: var(--accent-amber);
+    width: 16ch;
+    flex-shrink: 0;
+  }
+  .nav-hint {
+    display: flex;
+    gap: var(--space-4);
+    padding-left: 1.5em;
+    margin-top: var(--space-1);
+  }
+  .nav-hint a {
+    color: var(--accent-cyan);
+  }
+  .nav-hint a:hover {
+    color: var(--accent-green);
+  }
+  .ai-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-1) var(--space-4);
+  }
+  .ai-stat-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+  .ai-stat-value {
+    color: var(--accent-green);
+    font-weight: 700;
+    font-size: 1.25rem;
+    min-width: 5ch;
+  }
+  .hour-chart {
+    margin-top: var(--space-1);
+  }
+  .hour-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-1);
+  }
+  .hour-label {
+    color: var(--text-muted);
+    width: 5ch;
+    flex-shrink: 0;
+  }
+  .hour-bar {
+    letter-spacing: -0.5px;
+  }
+  .hour-bar.morning { color: var(--accent-amber); }
+  .hour-bar.afternoon { color: var(--accent-cyan); }
+  .hour-bar.evening { color: var(--text-muted); }
+  .hour-bar.night { color: var(--accent-green); }
+  @media (max-width: 640px) {
+    .stat-row {
+      flex-direction: column;
+      gap: 0;
+    }
+    .stat-label {
+      width: auto;
+    }
+    .ai-stats {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

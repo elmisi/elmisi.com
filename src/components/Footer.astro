@@ -1,0 +1,60 @@
+---
+const contacts = [
+  { label: 'github', url: 'https://github.com/elmisi', display: 'github.com/elmisi' },
+  { label: 'linkedin', url: 'https://www.linkedin.com/in/alessandromisiti/', display: 'linkedin.com/in/alessandromisiti' },
+  { label: 'email', url: 'mailto:elmisi@protonmail.com', display: 'elmisi@protonmail.com' },
+  { label: 'location', url: null, display: 'Turin, Italy' },
+];
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="terminal">
+      <div class="terminal-bar">
+        <div class="terminal-dots">
+          <span class="terminal-dot terminal-dot--red"></span>
+          <span class="terminal-dot terminal-dot--yellow"></span>
+          <span class="terminal-dot terminal-dot--green"></span>
+        </div>
+        <span class="terminal-title">.contacts</span>
+      </div>
+      <div class="terminal-body">
+        <div><span class="prompt">visitor@elmisi.com:~$</span> <span class="command">cat .contacts</span></div>
+        <div class="output">---</div>
+        {contacts.map(c => (
+          <div class="output">
+            <span class="contact-label">{c.label}:</span>
+            {c.url ? (
+              <a href={c.url} target={c.url.startsWith('mailto') ? undefined : '_blank'} rel="noopener">{c.display}</a>
+            ) : (
+              <span>{c.display}</span>
+            )}
+          </div>
+        ))}
+        <div class="output">---</div>
+        <div class="output comment">EOF</div>
+      </div>
+    </div>
+    <div class="copyright">
+      <span class="text-muted">&copy; {new Date().getFullYear()} Alessandro Misiti</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    margin-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+  .contact-label {
+    display: inline-block;
+    width: 11ch;
+    color: var(--accent-amber);
+  }
+  .copyright {
+    text-align: center;
+    margin-top: var(--space-3);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+  }
+</style>

@@ -1,0 +1,106 @@
+{
+  "positions": [
+    {
+      "hash": "f7a3c1d",
+      "role": "Senior Software Engineer & Consultant",
+      "company": "Freelance",
+      "period": "Jan 2026 -- present",
+      "description": "Independent consulting and software development",
+      "highlights": [
+        "AI-native development with Claude Code, Codex, Gemini CLI",
+        "Backend architecture and DevOps consulting",
+        "Full-stack project delivery for clients"
+      ],
+      "tech": ["Python", "Django", "Docker", "AI", "DevOps"]
+    },
+    {
+      "hash": "e4f1a2b",
+      "role": "Backend Developer",
+      "company": "Umpire srl",
+      "period": "Jul 2025 -- Dec 2025",
+      "description": "Referi V2 - Padel player performance platform",
+      "highlights": [
+        "Flutter app coordination for mobile & on-court devices",
+        "Backend development with Python/Django/Flask",
+        "Hardware configuration tools for Referi counters",
+        "Rollout and monitoring system design"
+      ],
+      "tech": ["Python", "Django", "Flask", "Flutter", "Docker"]
+    },
+    {
+      "hash": "b3c7d9a",
+      "role": "Technical Director",
+      "company": "Djungle Studio",
+      "period": "Jan 2020 -- Jun 2025",
+      "description": "Retail loyalty engagement platform",
+      "highlights": [
+        "DevOps infrastructure management",
+        "Service design and full-stack development",
+        "Team coordination (internal + outsourcing)",
+        "Flying Tiger Copenhagen international platform"
+      ],
+      "tech": ["Python", "Django", "Docker", "Ansible", "DevOps"]
+    },
+    {
+      "hash": "a1d5f8e",
+      "role": "Technical Director",
+      "company": "Djungle",
+      "period": "Sep 2018 -- Dec 2019",
+      "description": "Djungle Engine - async event-based business rules system",
+      "highlights": [
+        "Infrastructure management and service development",
+        "Asynchronous event processing architecture",
+        "Python/Django full-stack development"
+      ],
+      "tech": ["Python", "Django", "Celery", "Docker"]
+    },
+    {
+      "hash": "7f2e4c1",
+      "role": "Senior Developer & Project Manager",
+      "company": "EXOP Group GmbH",
+      "period": "Mar 2017 -- Aug 2018",
+      "description": "Risk management platform",
+      "highlights": [
+        "Full-stack development with Ruby and Ember.js",
+        "Google Cloud Platform & Kubernetes",
+        "Kanban project management"
+      ],
+      "tech": ["Ruby", "Ember.js", "Node.js", "GCP", "Kubernetes"]
+    },
+    {
+      "hash": "3a9b7d2",
+      "role": "Development Coordinator",
+      "company": "Bakeca.it",
+      "period": "Mar 2008 -- Feb 2017",
+      "description": "Major Italian classified ads portal",
+      "highlights": [
+        "Led team of up to 10 developers",
+        "High-traffic website architecture (~50 servers)",
+        "Full-stack development and technical leadership",
+        "9 years of continuous growth and scaling"
+      ],
+      "tech": ["Python", "Django", "JavaScript", "MySQL", "SOLR"]
+    },
+    {
+      "hash": "0c1d8f5",
+      "role": "Full-Stack Developer",
+      "company": "EasyBit s.r.l.",
+      "period": "Dec 2000 -- Feb 2008",
+      "description": "Early career: enterprise web applications and public sector projects (TOROC Turin 2006 Olympics, SMAU). Java and LAMP stack.",
+      "highlights": [],
+      "tech": ["Java", "PHP", "LAMP"]
+    }
+  ],
+  "education": [
+    {
+      "year": "2001",
+      "title": "Laurea in Ingegneria Informatica",
+      "institution": "Politecnico di Torino"
+    },
+    {
+      "year": "1991",
+      "title": "Perito Industriale Capotecnico Informatico",
+      "institution": "I.T.I.S. \"Alessandro Volta\", Alessandria"
+    }
+  ]
+}
