@@ -1,6 +1,12 @@
 {
   "live": [
     {
+      "name": "elmisi.com",
+      "url": "https://elmisi.com",
+      "description": "This site. Personal portfolio with terminal aesthetic, built with Astro. Static output, zero JS frameworks.",
+      "tech": ["Astro", "CSS", "Docker", "Nginx"]
+    },
+    {
       "name": "Watch U Want",
       "url": "https://watch-u-want.com",
       "description": "AI-powered movie recommendation app. Suggests what to watch based on your mood and preferences.",

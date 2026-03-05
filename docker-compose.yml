@@ -9,11 +9,17 @@ services:
       - web_proxy_net
     labels:
       - "traefik.enable=true"
+      # Main router - elmisi.com
       - "traefik.http.routers.elmisi-com.rule=Host(`elmisi.com`)"
       - "traefik.http.routers.elmisi-com.entrypoints=websecure"
       - "traefik.http.routers.elmisi-com.tls.certresolver=letsencrypt"
-      - "traefik.http.routers.elmisi-com.middlewares=security-headers@file,gzip@file"
+      - "traefik.http.routers.elmisi-com.middlewares=security-headers-public@file,gzip@file"
       - "traefik.http.services.elmisi-com.loadbalancer.server.port=80"
+      # WWW redirect router
+      - "traefik.http.routers.elmisi-com-www.rule=Host(`www.elmisi.com`)"
+      - "traefik.http.routers.elmisi-com-www.entrypoints=websecure"
+      - "traefik.http.routers.elmisi-com-www.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.elmisi-com-www.middlewares=www-to-apex@file"
 
 networks:
   web_proxy_net:
