@@ -109,6 +109,12 @@
       "url": "https://github.com/elmisi/misipwgen",
       "description": "Multilingual pronounceable password generator. Italian and Spanish support, syllable-based construction, web interface.",
       "tech": ["Python", "NLP"]
+    },
+    {
+      "name": "ampulla",
+      "url": "https://github.com/elmisi/ampulla",
+      "description": "Self-hosted error and performance tracking. Sentry SDK compatible, structured stacktraces, latency percentiles, ntfy notifications.",
+      "tech": ["Go", "PostgreSQL", "Docker"]
     }
   ]
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.1 - 2026-03-25
+
+- Add ampulla (self-hosted error tracking) to GitHub projects portfolio
+
 ## 0.2.0 - 2026-03-25
 
 - Add blog section with Astro content collections
