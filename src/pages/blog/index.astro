@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Terminal from '../../components/Terminal.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+function formatDate(date: Date) {
+  return date.toISOString().slice(0, 10);
+}
+---
+
+<BaseLayout
+  title="Blog"
+  description="Articles on AI-native development, developer tools, and lessons learned from building with Claude Code."
+  canonicalPath="/blog/"
+>
+  <section class="section">
+    <div class="section-header">
+      <span class="prompt">visitor@elmisi.com:~$</span>
+      <span class="command"> ls -la articles/</span>
+    </div>
+
+    <Terminal title="articles/">
+      <div class="listing-header output">
+        total {posts.length}
+      </div>
+      {posts.map(post => (
+        <a href={`/blog/${post.id}/`} class="article-entry">
+          <div class="article-meta">
+            <span class="output">-rw-r--r--</span>
+            <span class="highlight">{formatDate(post.data.date)}</span>
+            <span class="command">{post.id}.md</span>
+          </div>
+          <div class="article-desc output">{post.data.description}</div>
+          {post.data.tags && (
+            <div class="article-tags">
+              {post.data.tags.map(t => <span class="tag tag--green">{t}</span>)}
+            </div>
+          )}
+        </a>
+      ))}
+    </Terminal>
+  </section>
+</BaseLayout>
+
+<style>
+  .section-header {
+    margin-bottom: var(--space-3);
+  }
+  .listing-header {
+    margin-bottom: var(--space-3);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--border);
+  }
+  .article-entry {
+    display: block;
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .article-entry:last-child {
+    border-bottom: none;
+  }
+  .article-entry:hover {
+    background: var(--bg-secondary);
+  }
+  .article-entry:hover .command {
+    color: var(--accent-green);
+  }
+  .article-meta {
+    display: flex;
+    gap: var(--space-2);
+    align-items: baseline;
+  }
+  .article-desc {
+    padding-left: 2ch;
+    margin-top: var(--space-1);
+    font-size: 0.8125rem;
+  }
+  .article-tags {
+    padding-left: 2ch;
+    margin-top: var(--space-1);
+  }
+  @media (max-width: 640px) {
+    .article-meta {
+      flex-wrap: wrap;
+      gap: var(--space-1);
+    }
+  }
+</style>

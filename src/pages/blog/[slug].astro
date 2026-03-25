@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Terminal from '../../components/Terminal.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+function formatDate(date: Date) {
+  return date.toISOString().slice(0, 10);
+}
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  canonicalPath={`/blog/${post.id}/`}
+>
+  <section class="section">
+    <div class="section-header">
+      <span class="prompt">visitor@elmisi.com:~$</span>
+      <span class="command"> cat articles/{post.id}.md</span>
+    </div>
+
+    <Terminal title={`${post.id}.md`}>
+      <div class="article-header">
+        <h1 class="article-title">{post.data.title}</h1>
+        <div class="article-date">
+          <span class="comment"># {formatDate(post.data.date)}</span>
+        </div>
+        {post.data.tags && (
+          <div class="article-tags">
+            {post.data.tags.map(t => <span class="tag tag--green">{t}</span>)}
+          </div>
+        )}
+      </div>
+      <div class="article-content">
+        <Content />
+      </div>
+    </Terminal>
+  </section>
+
+  <section class="section">
+    <span class="prompt">visitor@elmisi.com:~$</span>
+    <a href="/blog/" class="command back-link"> cd ../articles/</a>
+  </section>
+</BaseLayout>
+
+<style>
+  .section-header {
+    margin-bottom: var(--space-3);
+  }
+  .article-header {
+    padding-bottom: var(--space-3);
+    margin-bottom: var(--space-3);
+    border-bottom: 1px solid var(--border);
+  }
+  .article-title {
+    color: var(--accent-amber);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-1);
+  }
+  .article-date {
+    margin-bottom: var(--space-1);
+  }
+  .back-link {
+    text-decoration: none;
+  }
+  .back-link:hover {
+    color: var(--accent-green);
+  }
+
+  /* Markdown content styling */
+  .article-content :global(h2) {
+    color: var(--accent-amber);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+  }
+  .article-content :global(h2::before) {
+    content: '## ';
+    color: var(--text-muted);
+  }
+  .article-content :global(p) {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+  }
+  .article-content :global(strong) {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+  .article-content :global(em) {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .article-content :global(a) {
+    color: var(--accent-cyan);
+  }
+  .article-content :global(a:hover) {
+    color: var(--accent-green);
+  }
+  .article-content :global(ul),
+  .article-content :global(ol) {
+    padding-left: 3ch;
+    margin-bottom: var(--space-2);
+    color: var(--text-secondary);
+  }
+  .article-content :global(li) {
+    margin-bottom: var(--space-1);
+  }
+  .article-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: var(--space-4) 0;
+  }
+  .article-content :global(blockquote) {
+    border-left: 2px solid var(--accent-green-dim);
+    padding-left: var(--space-2);
+    color: var(--text-muted);
+    margin-bottom: var(--space-2);
+  }
+  .article-content :global(code) {
+    background: var(--bg-secondary);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.875em;
+  }
+  .article-content :global(pre) {
+    background: var(--bg-secondary);
+    padding: var(--space-2);
+    border-radius: 4px;
+    overflow-x: auto;
+    margin-bottom: var(--space-2);
+  }
+  .article-content :global(pre code) {
+    background: none;
+    padding: 0;
+  }
+</style>

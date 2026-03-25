@@ -27,6 +27,15 @@ Three pages, each consuming JSON data files from `src/data/`:
 
 **Content changes go in JSON data files, not in page templates.**
 
+### Blog
+
+Astro content collections (configured in `src/content.config.ts`). Articles are markdown files in `src/content/blog/` with frontmatter (title, date, description, tags).
+
+- `src/pages/blog/index.astro` — Listing page styled as `ls -la articles/`
+- `src/pages/blog/[slug].astro` — Article detail page with `cat` command and rendered markdown
+
+To add a new article: create a `.md` file in `src/content/blog/` with the required frontmatter.
+
 ### Key patterns
 
 - `src/layouts/BaseLayout.astro` wraps all pages (Head + Nav + slot + Footer)
