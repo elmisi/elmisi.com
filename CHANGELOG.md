@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 - 2026-03-29
+
+- Add new blog article: "The Missing Variable: Oligarchic Agency in the 2028 Global Intelligence Crisis"
+
 ## 0.2.1 - 2026-03-25
 
 - Add ampulla (self-hosted error tracking) to GitHub projects portfolio
