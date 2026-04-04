@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0 - 2026-04-04
+
+- Add blog article: "Self-Improving Tools" (second in the AI workflow/compass series)
+
 ## 0.3.0 - 2026-03-29
 
 - Add new blog article: "The Missing Variable: Oligarchic Agency in the 2028 Global Intelligence Crisis"
