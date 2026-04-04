@@ -9,7 +9,7 @@ tags: ["claude-code", "ai", "workflow", "plugins"]
 
 ---
 
-A few months ago I wrote about a realization I had after a year of using Claude Code: my memory files documented the world but not my compass. They told Claude *what* things are — stacks, ports, deploy commands — but never *why* they matter to me. Every session started without knowing how I think.
+A few days ago I wrote about a realization I had after a year of using Claude Code: my memory files documented the world but not my compass. They told Claude *what* things are — stacks, ports, deploy commands — but never *why* they matter to me. Every session started without knowing how I think.
 
 That article ended with a fix: write 10 lines in the right file. Externalize your reasoning, not just your knowledge.
 
@@ -37,9 +37,9 @@ The quality problem wasn't in any individual plan. It was in the instructions th
 
 I went back and looked at the annotations I'd been writing across multiple plan-cycle sessions. Almost all of them were asking the same question, phrased differently: *"What happens when this doesn't go as expected?"*
 
-The plans described the happy path well. Architecture, data flows, component boundaries — all solid. But they were systematically vague on edges. No timeouts. No retry counts. No "if this fails, we do that instead." No numbers where numbers were needed.
+The plans described the happy path well. Architecture, data flows, component boundaries — all solid. But they were always vague on edges. No timeouts. No retry counts. No "if this fails, we do that instead." No numbers where numbers were needed.
 
-This wasn't Claude being lazy. The SKILL.md that drives plan-cycle simply didn't ask for those things. The template had a section called "Edge Cases and Risks" with a one-line prompt: *"What could go wrong. What needs careful handling."* That's a question that invites hand-waving. And hand-waving is exactly what I got.
+This wasn't Claude being lazy. The SKILL.md that drives plan-cycle simply didn't ask for those things. The template had a section called "Edge Cases and Risks" with a one-line prompt: *"What could go wrong. What needs careful handling."* That's a question that invites vague answers. And vague answers are exactly what I got.
 
 ## Fixing the tool, not the output
 
@@ -55,7 +55,7 @@ I added three guidelines to plan-cycle's SKILL.md:
 
 I restructured the Edge Cases section to require likelihood, impact, concrete mitigation, and a plan B. I added a new section — Failure Modes and Degradation — that forces the plan to describe what happens when each critical component fails, with specific thresholds and fallback steps.
 
-The next plan was measurably better. Not because Claude suddenly got smarter, but because the instructions no longer allowed vagueness where precision was needed.
+The next plan was noticeably better. Not because Claude suddenly got smarter, but because the instructions no longer allowed vagueness where precision was needed.
 
 ## The recursive realization
 
@@ -71,7 +71,7 @@ And yes, I plan to run takeaway on takeaway itself. The recursion is the point.
 
 ## The evolution in hindsight
 
-Looking back at a year and a half of building on AI coding agents, I can see three distinct phases:
+Looking back at a year of building on AI coding agents, I can see three distinct phases:
 
 **Phase 1: The tool works for me.** I used Claude Code as-is. Wrote prompts, got outputs, fixed what was wrong manually. Every session started from zero context. This is where most people are.
 
@@ -87,7 +87,7 @@ The pattern I'm describing — use a tool, extract lessons, feed them back into 
 
 The common thread is that these are people who have moved past "how do I use this tool" to "how do I make this tool get better at the specific thing I need it to do." They're not waiting for the next model release to fix their problems. They're fixing their tools' instructions.
 
-This is a different kind of skill. It's not prompt engineering — that's about crafting individual requests. It's not fine-tuning — that's about changing the model. It's something in between: engineering the feedback loops that sit between you and the model, so that each iteration compounds.
+This is a different kind of skill. It's not prompt engineering — that's about crafting individual requests. It's not fine-tuning — that's about changing the model. It's something in between: engineering the feedback loops that sit between you and the model, so that each iteration builds on the last.
 
 ## Finding the compass
 

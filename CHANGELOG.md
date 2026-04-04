@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1 - 2026-04-04
+
+- Fix Self-Improving Tools article: correct timeline, tone, and vocabulary
+
 ## 0.4.0 - 2026-04-04
 
 - Add blog article: "Self-Improving Tools" (second in the AI workflow/compass series)
