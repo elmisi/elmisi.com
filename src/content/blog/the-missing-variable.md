@@ -45,12 +45,16 @@ Citrini's scenario grasps the economic mechanics: when AI replaces a $180,000 pr
 
 Consider the numbers:
 
-| Company | Market Value (early 2026) | Employees | Value per Employee |
-|---|---|---|---|
-| Nvidia | ~$3 trillion | ~32,000 | **~$94 million** |
-| OpenAI | ~$150-300 billion | ~3,500 | **~$57 million** |
-| Anthropic | ~$60-100 billion | ~2,000 | **~$40 million** |
-| Walmart | ~$650 billion | ~2,100,000 | **~$310,000** |
+```
++-----------+-------------------+-------------+------------------+
+| Company   | Market Value      | Employees   | Value/Employee   |
++-----------+-------------------+-------------+------------------+
+| Nvidia    | ~$3 trillion      | ~32,000     | ~$94 million     |
+| OpenAI    | ~$150-300 billion | ~3,500      | ~$57 million     |
+| Anthropic | ~$60-100 billion  | ~2,000      | ~$40 million     |
+| Walmart   | ~$650 billion     | ~2,100,000  | ~$310,000        |
++-----------+-------------------+-------------+------------------+
+```
 
 Nvidia generates roughly **300 times more market value per employee** than Walmart. AI companies are the most extreme example in economic history of value creation being captured by capital rather than labor. A few thousand employees — and more importantly, a few dozen equity holders — sit atop hundreds of billions in value.
 

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 - 2026-04-09
+
+- Add blog article: "The Queue That Isn't a Queue"
+- Convert markdown tables to ASCII art in blog articles
+- Add h3 styling and smaller pre font for blog content
+
 ## 0.4.1 - 2026-04-04
 
 - Fix Self-Improving Tools article: correct timeline, tone, and vocabulary

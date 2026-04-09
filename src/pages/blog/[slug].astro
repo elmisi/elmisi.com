@@ -135,12 +135,24 @@ function formatDate(date: Date) {
     border-radius: 3px;
     font-size: 0.875em;
   }
+  .article-content :global(h3) {
+    color: var(--accent-cyan);
+    font-size: 0.9375rem;
+    font-weight: 700;
+    margin-top: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+  .article-content :global(h3::before) {
+    content: '### ';
+    color: var(--text-muted);
+  }
   .article-content :global(pre) {
     background: var(--bg-secondary);
     padding: var(--space-2);
     border-radius: 4px;
     overflow-x: auto;
     margin-bottom: var(--space-2);
+    font-size: 0.8em;
   }
   .article-content :global(pre code) {
     background: none;
