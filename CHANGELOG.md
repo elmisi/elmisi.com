@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0 - 2026-04-19
+
+- Add blog article: "A Fistful of Token$" (follow-up to "The Missing Variable")
+
 ## 0.5.0 - 2026-04-09
 
 - Add blog article: "The Queue That Isn't a Queue"
