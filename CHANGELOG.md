@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0 - 2026-04-30
+
+- Add blog article: "npm install intelligence" (third in the AI workflow/compass series)
+
 ## 0.6.0 - 2026-04-19
 
 - Add blog article: "A Fistful of Token$" (follow-up to "The Missing Variable")
