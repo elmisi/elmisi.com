@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.0 - 2026-05-09
+
+- Add blog article: "Where to Look, Not What to Change" (fourth in the AI workflow/compass series)
+
 ## 0.7.0 - 2026-04-30
 
 - Add blog article: "npm install intelligence" (third in the AI workflow/compass series)
