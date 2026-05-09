@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.1 - 2026-05-09
+
+- Move articles/ and plan files into wip/; add .dockerignore to exclude wip/ from builds
+
 ## 0.8.0 - 2026-05-09
 
 - Add blog article: "Where to Look, Not What to Change" (fourth in the AI workflow/compass series)
