@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0 - 2026-05-24
+
+- Add blog article: "The Wheel Was Already Round" (fifth in the AI workflow/compass series)
+
 ## 0.8.1 - 2026-05-09
 
 - Move articles/ and plan files into wip/; add .dockerignore to exclude wip/ from builds
