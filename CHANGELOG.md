@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.10.0 - 2026-05-24
+
+- Add `wip` section to projects: amplifier, amalgamate, ambary (private repos shown without link)
+- Add `amorist` and `amorph-code` to GitHub repos section
+- Reorder live and github sections; update Powder description (now "On the edge secret manager") and tech (Rust)
+- Extend ProjectCard to support `type='wip'` (no URL, WIP badge, static `# in progress` command)
+
 ## 0.9.0 - 2026-05-24
 
 - Add blog article: "The Wheel Was Already Round" (fifth in the AI workflow/compass series)

@@ -1,10 +1,10 @@
 {
   "live": [
     {
-      "name": "elmisi.com",
-      "url": "https://elmisi.com",
-      "description": "This site. Personal portfolio with terminal aesthetic, built with Astro. Static output, zero JS frameworks.",
-      "tech": ["Astro", "CSS", "Docker", "Nginx"]
+      "name": "Ranker",
+      "url": "https://ranker.elmisi.com",
+      "description": "Product comparison and ranking tool. Rate and sort products by custom criteria.",
+      "tech": ["Python", "Docker"]
     },
     {
       "name": "Watch U Want",
@@ -19,6 +19,36 @@
       "tech": ["Python", "Stable Diffusion", "Docker", "Nginx"]
     },
     {
+      "name": "Tray",
+      "url": "https://tray.elmisi.com",
+      "description": "Text sharing service. Quickly share text snippets with a simple, clean interface.",
+      "tech": ["Python", "Docker"]
+    },
+    {
+      "name": "Ambush",
+      "url": "https://ambush.elmisi.com",
+      "description": "Webhook testing tool. Inspect, debug and replay incoming HTTP requests in real time.",
+      "tech": ["FastAPI", "React", "Redis"]
+    },
+    {
+      "name": "Listo",
+      "url": "https://listo.elmisi.com",
+      "description": "Shopping list PWA. Installable progressive web app for shared grocery lists.",
+      "tech": ["JavaScript", "PWA", "Nginx"]
+    },
+    {
+      "name": "7Diet",
+      "url": "https://7diet.elmisi.com",
+      "description": "Diet tracking and meal planning app. Plan your weekly meals and track nutrition.",
+      "tech": ["Python", "PostgreSQL", "Nginx"]
+    },
+    {
+      "name": "elmisi.com",
+      "url": "https://elmisi.com",
+      "description": "This site. Personal portfolio with terminal aesthetic, built with Astro. Static output, zero JS frameworks.",
+      "tech": ["Astro", "CSS", "Docker", "Nginx"]
+    },
+    {
       "name": "De-Sidera",
       "url": "https://de-sidera.com",
       "description": "Wishlist application. Create, manage and share wishlists with friends and family.",
@@ -29,12 +59,6 @@
       "url": "https://tasks.elmisi.com",
       "description": "Trello-style kanban board for task management. FastAPI backend with React frontend.",
       "tech": ["FastAPI", "React", "PostgreSQL"]
-    },
-    {
-      "name": "Ambush",
-      "url": "https://ambush.elmisi.com",
-      "description": "Webhook testing tool. Inspect, debug and replay incoming HTTP requests in real time.",
-      "tech": ["FastAPI", "React", "Redis"]
     },
     {
       "name": "Amelia",
@@ -49,37 +73,25 @@
       "tech": ["FastAPI", "PostgreSQL"]
     },
     {
-      "name": "Ranker",
-      "url": "https://ranker.elmisi.com",
-      "description": "Product comparison and ranking tool. Rate and sort products by custom criteria.",
-      "tech": ["Python", "Docker"]
-    },
-    {
-      "name": "Listo",
-      "url": "https://listo.elmisi.com",
-      "description": "Shopping list PWA. Installable progressive web app for shared grocery lists.",
-      "tech": ["JavaScript", "PWA", "Nginx"]
-    },
-    {
-      "name": "Tray",
-      "url": "https://tray.elmisi.com",
-      "description": "Text sharing service. Quickly share text snippets with a simple, clean interface.",
-      "tech": ["Python", "Docker"]
-    },
-    {
-      "name": "7Diet",
-      "url": "https://7diet.elmisi.com",
-      "description": "Diet tracking and meal planning app. Plan your weekly meals and track nutrition.",
-      "tech": ["Python", "PostgreSQL", "Nginx"]
-    },
-    {
       "name": "Powder",
       "url": "https://powder.elmisi.com",
-      "description": "Powder application.",
-      "tech": ["Python", "Docker"]
+      "description": "On the edge secret manager.",
+      "tech": ["Rust", "Docker"]
     }
   ],
   "github": [
+    {
+      "name": "claude-code-automation",
+      "url": "https://github.com/elmisi/claude-code-automation",
+      "description": "Expert advisor plugin for Claude Code. Interview system, decision matrix, file generation with schema validation.",
+      "tech": ["HTML", "JavaScript"]
+    },
+    {
+      "name": "amorist",
+      "url": "https://github.com/elmisi/amorist",
+      "description": "Standalone WYSIWYG Markdown editor for Linux and macOS. Tauri 2 + Rust backend, vanilla JS editor — single binary, no Electron.",
+      "tech": ["Tauri", "Rust", "JavaScript", "Markdown"]
+    },
     {
       "name": "amenity-stuff",
       "url": "https://github.com/elmisi/amenity-stuff",
@@ -99,12 +111,6 @@
       "tech": ["Python", "Textual", "fdupes"]
     },
     {
-      "name": "claude-code-automation",
-      "url": "https://github.com/elmisi/claude-code-automation",
-      "description": "Expert advisor plugin for Claude Code. Interview system, decision matrix, file generation with schema validation.",
-      "tech": ["HTML", "JavaScript"]
-    },
-    {
       "name": "misipwgen",
       "url": "https://github.com/elmisi/misipwgen",
       "description": "Multilingual pronounceable password generator. Italian and Spanish support, syllable-based construction, web interface.",
@@ -115,6 +121,29 @@
       "url": "https://github.com/elmisi/ampulla",
       "description": "Self-hosted error and performance tracking. Sentry SDK compatible, structured stacktraces, latency percentiles, ntfy notifications.",
       "tech": ["Go", "PostgreSQL", "Docker"]
+    },
+    {
+      "name": "amorph-code",
+      "url": "https://github.com/elmisi/amorph-code",
+      "description": "Aborted experiment: what should a programming language look like if LLMs are the primary readers and writers? A few ideas in there might still be worth keeping.",
+      "tech": ["Python", "AI", "Experiment"]
+    }
+  ],
+  "wip": [
+    {
+      "name": "amplifier",
+      "description": "Orchestrator for autonomous Claude Code initiatives. Claude Max as planner, cheap workers for execution, file-based state, multi-tenant.",
+      "tech": ["Shell", "Claude Code", "Orchestration"]
+    },
+    {
+      "name": "amalgamate",
+      "description": "Multi-agent dev sessions on one project. Claude Code, Codex, and OpenCode collaborate through an append-only shared log — each agent has a defined role, and the human participates in the same stream.",
+      "tech": ["Shell", "Python", "tmux", "Multi-agent"]
+    },
+    {
+      "name": "ambary",
+      "description": "Hacker News reader for Android. Stories summarized in simple English by Claude, read aloud with on-device neural TTS, navigated by voice.",
+      "tech": ["Flutter", "Dart", "Claude API", "Neural TTS"]
     }
   ]
 }

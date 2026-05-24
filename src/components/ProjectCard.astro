@@ -2,26 +2,34 @@
 interface Props {
   name: string;
   description: string;
-  url: string;
+  url?: string;
   tech: string[];
-  type: 'live' | 'github';
+  type: 'live' | 'github' | 'wip';
 }
 
 const { name, description, url, tech, type } = Astro.props;
-const command = type === 'live' ? `open ${url.replace('https://', '')}` : `gh repo view ${name}`;
+const badge = type === 'live' ? 'LIVE' : type === 'github' ? 'OSS' : 'WIP';
+const command =
+  type === 'live' ? `open ${(url ?? '').replace('https://', '')}` :
+  type === 'github' ? `gh repo view ${name}` :
+  '# in progress';
 ---
 
 <div class="project-card">
   <div class="project-header">
     <span class="project-name">{name}</span>
-    <span class="project-type">{type === 'live' ? 'LIVE' : 'OSS'}</span>
+    <span class="project-type">{badge}</span>
   </div>
   <div class="project-desc output">{description}</div>
   <div class="project-tech">
     {tech.map(t => <span class="tag tag--green">{t}</span>)}
   </div>
   <div class="project-link">
-    <span class="prompt">$</span> <a href={url} target="_blank" rel="noopener" class="command">{command}</a>
+    {url ? (
+      <><span class="prompt">$</span> <a href={url} target="_blank" rel="noopener" class="command">{command}</a></>
+    ) : (
+      <><span class="prompt">$</span> <span class="command command--static">{command}</span></>
+    )}
   </div>
 </div>
 
@@ -72,5 +80,8 @@ const command = type === 'live' ? `open ${url.replace('https://', '')}` : `gh re
   }
   .project-link a:hover {
     color: var(--accent-green);
+  }
+  .command--static {
+    color: var(--text-muted);
   }
 </style>

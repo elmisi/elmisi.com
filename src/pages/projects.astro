@@ -6,7 +6,7 @@ import projects from '../data/projects.json';
 
 <BaseLayout
   title="Projects"
-  description="Portfolio of live web services and open source projects by Alessandro Misiti. 12 self-hosted apps and 6+ GitHub repositories."
+  description="Portfolio of live web services, open source projects, and works in progress by Alessandro Misiti."
   canonicalPath="/projects/"
 >
   <section class="section">
@@ -41,6 +41,24 @@ import projects from '../data/projects.json';
           url={p.url}
           tech={p.tech}
           type="github"
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-header">
+      <span class="prompt">visitor@elmisi.com:~$</span>
+      <span class="command"> ls ~/wip/</span>
+    </div>
+    <div class="output section-count">private repos — not shipped yet, no public link</div>
+    <div class="grid">
+      {projects.wip.map(p => (
+        <ProjectCard
+          name={p.name}
+          description={p.description}
+          tech={p.tech}
+          type="wip"
         />
       ))}
     </div>
