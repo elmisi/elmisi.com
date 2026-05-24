@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.11.0 - 2026-05-24
+
+- Add bilingual `/collab/` page (Italian + English) describing how I take on work, what I won't, and how to start a conversation
+- Add `collab/` entry to the main nav
+- Fix Bakeca.it experience: role corrected to "Technical Director, Application Development" with clarified scope (application side, not systems)
+
 ## 0.10.0 - 2026-05-24
 
 - Add `wip` section to projects: amplifier, amalgamate, ambary (private repos shown without link)

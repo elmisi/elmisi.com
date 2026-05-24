@@ -69,15 +69,15 @@
     },
     {
       "hash": "3a9b7d2",
-      "role": "Development Coordinator",
+      "role": "Technical Director, Application Development",
       "company": "Bakeca.it",
       "period": "Mar 2008 -- Feb 2017",
-      "description": "Major Italian classified ads portal",
+      "description": "Major Italian classified ads portal. Owned the application side of engineering — separate from the systems/infrastructure team.",
       "highlights": [
-        "Led team of up to 10 developers",
-        "High-traffic website architecture (~50 servers)",
-        "Full-stack development and technical leadership",
-        "9 years of continuous growth and scaling"
+        "Led the application development team (up to 10 engineers) end-to-end",
+        "Full ownership of product engineering: roadmap, architecture, hiring, code reviews",
+        "Worked alongside the systems team running the ~50-server infrastructure",
+        "9 years of continuous growth and scaling on a high-traffic platform"
       ],
       "tech": ["Python", "Django", "JavaScript", "MySQL", "SOLR"]
     },

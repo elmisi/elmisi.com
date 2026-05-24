@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Terminal from '../../components/Terminal.astro';
+---
+
+<BaseLayout
+  title="Collab"
+  description="How I work with founders and small teams: what I take on, what I won't, and how to start a conversation. Bilingual (Italian, English)."
+  canonicalPath="/collab/"
+>
+  <section class="section">
+    <div class="section-header">
+      <span class="prompt">visitor@elmisi.com:~$</span>
+      <span class="command"> cat collab --lang="it"</span>
+    </div>
+
+    <Terminal title="collab.md">
+      <article class="collab-content">
+        <section lang="it">
+          <h2>Lavorare insieme</h2>
+          <p>Sono un freelance e scelgo di lavorare solo su progetti che mi accendono. Questa pagina è un filtro: serve a capire prima di scrivermi se ha senso parlarne.</p>
+
+          <hr />
+
+          <h3>Quello che non prendo</h3>
+          <ul>
+            <li><strong>Progetti il cui vero scopo è vendere.</strong> Se l'obiettivo è il funnel, non la cosa venduta, non sono la persona giusta.</li>
+            <li><strong>"Clona il servizio X."</strong> Se l'unica specifica è il confronto con un prodotto esistente, potete tranquillamente usare un coding agent e farlo da voi, sentiamoci se poi vi viene un'idea innovativa o volete far crescere il progetto (validato).</li>
+            <li><strong>"Aggiungiamoci AI"</strong> senza un problema reale sotto. <em>Aggiungere AI</em> non è un caso d'uso.</li>
+            <li><strong>Gerarchia e burocrazie.</strong> Se ogni scelta deve essere rinegoziata attraverso tre layer di stakeholder, il lavoro si arena e io perdo interesse.</li>
+            <li><strong>Body rental puro / staff augmentation.</strong> Non sono una "testa fatturabile" — voglio sapere cosa stiamo costruendo e perché.</li>
+            <li><strong>"Andiamo veloci, sistemiamo dopo."</strong> Oltre un certo punto, il <em>dopo</em> non arriva mai, il debito tecnico solo se è un "investimento" sensato.</li>
+          </ul>
+
+          <h3>Quello che invece prendo volentieri</h3>
+          <ul>
+            <li><strong>Problemi veri, non concetti.</strong> Qualcosa di concreto che a qualcuno serve davvero — non "potrebbe essere utile a gente come X".</li>
+            <li><strong>Validazione prima delle feature.</strong> Si mette davanti a utenti reali il prima possibile. Se nessuno lo vuole, non aggiungiamo schermate — ci fermiamo e ripensiamo. La validazione non è una fase, è il senso del lavoro.</li>
+            <li><strong>Cose che vanno in produzione.</strong> Conta quello che gira davvero, non quello che si demo-a. Output concreto, sempre.</li>
+            <li><strong>Founder che si sporcano le mani.</strong> Se la persona di cui è il progetto non c'è nelle call, nelle decisioni, nei test — il progetto deriva e muore. Il commitment dalla tua parte non è negoziabile.</li>
+          </ul>
+
+          <h3>Come si lavora</h3>
+          <p>Dipende da cosa ti serve e da com'è messo il progetto. Modi tipici in cui finisco a collaborare:</p>
+          <ul>
+            <li><strong>Scrivo codice insieme a te</strong> (o per te, se nessun altro lo sta scrivendo). Decisioni e implementazione su di me.</li>
+            <li><strong>Tu o il tuo team scrivete</strong>, io faccio review, pair, architecture. Per il tempo che vi serve e se lo trovate utile.</li>
+            <li><strong>Strategia e messa a terra.</strong> Ti aiuto a costruire una strategia e fare in modo che il tuo team porti a casa il risultato.</li>
+            <li><strong>Audit one-shot.</strong> Guardo quello che hai, ti scrivo un piano, esco. A volte si continua, a volte no. Entrambe vanno bene.</li>
+          </ul>
+          <p>Quale (o quali) abbia senso lo capiamo dopo aver parlato una volta.</p>
+          <p><strong>Operativo:</strong> remote-first, disponibile a viaggi per kickoff o momenti critici. Time-zone Europa. Italiano o inglese. A progetto di default; a ore va bene lo stesso.</p>
+
+          <h3>Come si parte</h3>
+          <p>Se pensi che posso portare valore al tuo progetto, mandami una mail a <a href="mailto:elmisi@protonmail.com">elmisi@protonmail.com</a>. In due-tre paragrafi raccontami:</p>
+          <ol>
+            <li><strong>Cosa stai cercando di costruire.</strong> Concreto: il problema, chi avrà il problema, perché adesso.</li>
+            <li><strong>Dove sei adesso.</strong> Hai un prototipo? Un'idea? Un team? Cosa hai già provato.</li>
+            <li><strong>Perché ci tieni.</strong> Non un pitch — un motivo personale di perché vale la pena farlo.</li>
+          </ol>
+          <p>Sono un po' diretto, ma evitiamo tutti di perdere tempo.</p>
+        </section>
+
+        <div class="lang-divider" aria-hidden="true">
+          <span class="prompt">visitor@elmisi.com:~$</span>
+          <span class="command"> cat collab --lang="en"</span>
+        </div>
+
+        <section lang="en">
+          <h2>Working together</h2>
+          <p>I'm a freelancer and I pick the projects I work on. This page is a filter — it helps you decide whether it's worth reaching out before you do.</p>
+
+          <hr />
+
+          <h3>What I won't take on</h3>
+          <ul>
+            <li><strong>Projects whose primary purpose is selling.</strong> If the goal is the funnel, not the thing being sold, I'm the wrong person.</li>
+            <li><strong>"Clone service X."</strong> If the only spec is the comparison to an existing product, you can just use a coding agent and do it yourselves — talk to me later if an original idea comes out of it or you want to grow the project (once validated).</li>
+            <li><strong>"Let's add AI"</strong> without a real problem underneath. <em>Adding AI</em> isn't a use case.</li>
+            <li><strong>Hierarchy and red tape.</strong> If every decision has to be renegotiated through three layers of stakeholders, the work stalls and I lose interest.</li>
+            <li><strong>Pure body rental / staff augmentation.</strong> I'm not a billable head — I want to know what we're building and why.</li>
+            <li><strong>"Let's move fast, we'll fix it later."</strong> Past a certain point, <em>later</em> never comes — tech debt is fine only when it's a sensible "investment."</li>
+          </ul>
+
+          <h3>What I'm glad to take on</h3>
+          <ul>
+            <li><strong>Real problems, not concepts.</strong> Something concrete that someone actually needs — not "it could be useful for people like X."</li>
+            <li><strong>Validation before features.</strong> We put it in front of real users as soon as possible. If nobody wants it, we don't add screens — we stop and rethink. Validation isn't a phase; it's the whole point.</li>
+            <li><strong>Things that ship.</strong> What matters is what actually runs in production, not what gets demoed. Concrete output, always.</li>
+            <li><strong>Founders who get their hands dirty.</strong> If the person whose project this is isn't in the calls, the decisions, the tests — the project drifts and dies. Commitment on your side isn't negotiable.</li>
+          </ul>
+
+          <h3>How we'd work together</h3>
+          <p>Depends on what you need and the shape of the project. A few patterns I usually end up in:</p>
+          <ul>
+            <li><strong>I write code alongside you</strong> (or for you, if nobody else is writing it). Decisions and implementation on me.</li>
+            <li><strong>You or your team writes</strong>, I review, pair, architect. For as long as you find it useful.</li>
+            <li><strong>Strategy and execution.</strong> I help you build a strategy and make sure your team carries it to the finish line.</li>
+            <li><strong>One-shot audit.</strong> I look at what you have, write you a plan, leave. Sometimes we continue, sometimes not — both are fine.</li>
+          </ul>
+          <p>Which one (or ones) make sense, we figure out after talking once.</p>
+          <p><strong>Practical:</strong> remote-first, available to travel for kickoffs or critical moments. Europe timezone. Italian or English. Project-based by default; hourly works too.</p>
+
+          <h3>How to start</h3>
+          <p>If you think I can add value to your project, send me an email at <a href="mailto:elmisi@protonmail.com">elmisi@protonmail.com</a>. In two or three paragraphs, tell me:</p>
+          <ol>
+            <li><strong>What you're trying to build.</strong> Concrete: the problem, who has the problem, why now.</li>
+            <li><strong>Where you are now.</strong> Do you have a prototype? An idea? A team? What have you already tried.</li>
+            <li><strong>Why you care.</strong> Not a pitch — a personal reason why it's worth doing.</li>
+          </ol>
+          <p>I'm a bit blunt, but it saves everyone time.</p>
+        </section>
+      </article>
+    </Terminal>
+  </section>
+</BaseLayout>
+
+<style>
+  .section-header {
+    margin-bottom: var(--space-3);
+  }
+
+  .lang-divider {
+    margin: var(--space-6) 0 var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px dashed var(--border);
+  }
+
+  .collab-content :global(h2) {
+    color: var(--accent-amber);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-3);
+  }
+  .collab-content :global(h2::before) {
+    content: '## ';
+    color: var(--text-muted);
+  }
+  .collab-content :global(h3) {
+    color: var(--accent-cyan);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: var(--space-4);
+    margin-bottom: var(--space-2);
+  }
+  .collab-content :global(h3::before) {
+    content: '### ';
+    color: var(--text-muted);
+  }
+  .collab-content :global(p) {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-2);
+  }
+  .collab-content :global(strong) {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+  .collab-content :global(em) {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .collab-content :global(a) {
+    color: var(--accent-cyan);
+  }
+  .collab-content :global(a:hover) {
+    color: var(--accent-green);
+  }
+  .collab-content :global(ul),
+  .collab-content :global(ol) {
+    padding-left: 3ch;
+    margin-bottom: var(--space-3);
+    color: var(--text-secondary);
+  }
+  .collab-content :global(li) {
+    margin-bottom: var(--space-2);
+  }
+  .collab-content :global(hr) {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: var(--space-3) 0;
+  }
+</style>
