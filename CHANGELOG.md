@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.12.0 - 2026-06-23
+
+- Add blog article: "The Last Human Skill" (standalone essay: laziness, and a bit of arrogance, as the one skill AI can't take)
+
 ## 0.11.0 - 2026-05-24
 
 - Add bilingual `/collab/` page (Italian + English) describing how I take on work, what I won't, and how to start a conversation
