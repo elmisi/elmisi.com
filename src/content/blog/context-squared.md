@@ -61,7 +61,7 @@ Now you can often describe an idea in natural language, give a coding agent some
 
 It also makes it easier to test other people's ideas.
 
-The original version of Matt Pocock's [`/grill-me` skill](https://www.aihero.dev/5-agent-skills-i-use-every-day) was only three sentences long. Its purpose was to make the agent interview you about a plan, walk through the design decisions one by one, and explore the codebase instead of asking questions it could answer itself.
+The original version of Matt Pocock's <a href="https://www.aihero.dev/5-agent-skills-i-use-every-day" target="_blank" rel="noopener"><code>/grill-me</code> skill</a> was only three sentences long. Its purpose was to make the agent interview you about a plan, walk through the design decisions one by one, and explore the codebase instead of asking questions it could answer itself.
 
 Pocock has since turned it into a much more elaborate workflow. What I tried — and what I am talking about here — is that original three-sentence version, not the current skill.
 

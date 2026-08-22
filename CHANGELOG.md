@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.13.1 - 2026-08-22
+
+- Open the external Matt Pocock reference in "Context Squared" in a new tab
+
 ## 0.13.0 - 2026-08-22
 
 - Add blog article: "Context Squared" (sixth in the AI workflow/compass series: context as a two-way exchange between humans and coding agents)
