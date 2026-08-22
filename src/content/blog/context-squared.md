@@ -3,19 +3,9 @@ title: "Context Squared"
 date: 2026-08-22
 description: "We talk a lot about the context humans give AI. The other direction matters just as much: the context an agent gives us before asking us to decide."
 tags: ["ai", "coding-agents", "context-engineering", "workflow"]
-asciiArt: |2
-     ········                     ········
-    ·· ·········               ········· ··
-   ·· ··      ■>··           ···       ·· ··
-  ·· ··           ···     ···           ·· ··
-  ·  ·              ··· ···              ·  ·
-  ·  ·                ···                ·  ·
-  ·  ·              ··· ···              ·  ·
-  ·· ··           ···     ···           ·· ··
-   ·· ··       ···           ··<◆      ·· ··
-    ·· ·········               ········· ··
-     ········                     ········
-asciiArtAlt: "An infinity loop drawn with green terminal characters, with two cursors moving in opposite directions."
+asciiImage:
+  src: "/context-squared-ascii.html"
+  alt: "A luminous green infinity loop reconstructed entirely from ASCII characters."
 ---
 
 *The context we give an AI is only half of the conversation. The other half is the context it gives back to us.*

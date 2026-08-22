@@ -39,6 +39,8 @@ npm run dev        # http://localhost:4321
 npm run build      # static output in dist/
 ```
 
+See [ASCII Image Guidelines](docs/ascii-images.md) for the blog-cover workflow.
+
 ## Deploy
 
 ```bash

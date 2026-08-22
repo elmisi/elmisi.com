@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Terminal from '../../components/Terminal.astro';
 import { getCollection, render } from 'astro:content';
+import { readFileSync } from 'node:fs';
+import { basename, join } from 'node:path';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -13,6 +15,24 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+function loadAsciiImage(src: string) {
+  const filename = basename(src);
+  if (src !== `/${filename}` || !filename.endsWith('-ascii.html')) {
+    throw new Error(`Invalid ASCII image path: ${src}`);
+  }
+
+  const document = readFileSync(join(process.cwd(), 'public', filename), 'utf8');
+  const match = document.match(/<pre\b[^>]*>([\s\S]*?)<\/pre>/);
+  if (!match) {
+    throw new Error(`ASCII image has no <pre>: ${src}`);
+  }
+  return match[1];
+}
+
+const asciiImageHtml = post.data.asciiImage
+  ? loadAsciiImage(post.data.asciiImage.src)
+  : null;
 
 function formatDate(date: Date) {
   return date.toISOString().slice(0, 10);
@@ -42,12 +62,14 @@ function formatDate(date: Date) {
           </div>
         )}
       </div>
-      {post.data.asciiArt && (
-        <pre
+      {post.data.asciiImage && asciiImageHtml && (
+        <div
           class="article-ascii-cover"
           role="img"
-          aria-label={post.data.asciiArtAlt ?? ''}
-        >{post.data.asciiArt}</pre>
+          aria-label={post.data.asciiImage.alt}
+        >
+          <pre aria-hidden="true" set:html={asciiImageHtml}></pre>
+        </div>
       )}
       <div class="article-content">
         <Content />
@@ -80,20 +102,36 @@ function formatDate(date: Date) {
     margin-bottom: var(--space-1);
   }
   .article-ascii-cover {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1.95;
     margin-bottom: var(--space-3);
-    padding: var(--space-3) var(--space-1);
-    overflow-x: auto;
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--accent-green);
-    font-family: var(--font-mono);
-    font-size: clamp(0.75rem, 2vw, 0.9375rem);
-    line-height: 1.15;
-    text-align: center;
-    text-shadow: 0 0 6px var(--accent-green-dim);
-    white-space: pre;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    container-type: inline-size;
+    background: var(--bg-terminal);
   }
+  .article-ascii-cover pre {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 7px;
+    font-size: clamp(3px, 0.88cqw, 7px);
+    font-variant-ligatures: none;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 0.88;
+    text-shadow: 0 0 0.55em currentColor;
+    user-select: text;
+  }
+  .article-ascii-cover :global(.p0) { color: #0a0e14; }
+  .article-ascii-cover :global(.p1) { color: #0b2814; }
+  .article-ascii-cover :global(.p2) { color: #105021; }
+  .article-ascii-cover :global(.p3) { color: #18752e; }
+  .article-ascii-cover :global(.p4) { color: #229b3c; }
+  .article-ascii-cover :global(.p5) { color: #39d353; }
+  .article-ascii-cover :global(.p6) { color: #78e889; }
+  .article-ascii-cover :global(.p7) { color: #d7ffdc; }
   .back-link {
     text-decoration: none;
   }

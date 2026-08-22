@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.15.0 - 2026-08-23
+
+- Publish the "Context Squared" cover as a responsive HTML image made from real ASCII characters
+- Add a reusable bitmap-to-ASCII generator and document the visual and technical guidelines
+
 ## 0.14.1 - 2026-08-22
 
 - Replace the raster "Context Squared" cover with responsive, text-rendered ASCII art
