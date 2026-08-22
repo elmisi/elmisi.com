@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.13.0 - 2026-08-22
+
+- Add blog article: "Context Squared" (sixth in the AI workflow/compass series: context as a two-way exchange between humans and coding agents)
+
 ## 0.12.0 - 2026-06-23
 
 - Add blog article: "The Last Human Skill" (standalone essay: laziness, and a bit of arrogance, as the one skill AI can't take)
