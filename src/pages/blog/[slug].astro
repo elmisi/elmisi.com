@@ -23,6 +23,8 @@ function formatDate(date: Date) {
   title={post.data.title}
   description={post.data.description}
   canonicalPath={`/blog/${post.id}/`}
+  image={post.data.image}
+  imageAlt={post.data.imageAlt}
 >
   <section class="section">
     <div class="section-header">
@@ -42,6 +44,18 @@ function formatDate(date: Date) {
           </div>
         )}
       </div>
+      {post.data.image && (
+        <figure class="article-cover">
+          <img
+            src={post.data.image}
+            alt={post.data.imageAlt ?? ''}
+            width="1731"
+            height="909"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
+      )}
       <div class="article-content">
         <Content />
       </div>
@@ -71,6 +85,18 @@ function formatDate(date: Date) {
   }
   .article-date {
     margin-bottom: var(--space-1);
+  }
+  .article-cover {
+    margin-bottom: var(--space-3);
+    overflow: hidden;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+  .article-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
   .back-link {
     text-decoration: none;

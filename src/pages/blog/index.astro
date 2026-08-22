@@ -29,16 +29,29 @@ function formatDate(date: Date) {
       </div>
       {posts.map(post => (
         <a href={`/blog/${post.id}/`} class="article-entry">
-          <div class="article-meta">
-            <span class="output">-rw-r--r--</span>
-            <span class="highlight">{formatDate(post.data.date)}</span>
-            <span class="command">{post.id}.md</span>
-          </div>
-          <div class="article-desc output">{post.data.description}</div>
-          {post.data.tags && (
-            <div class="article-tags">
-              {post.data.tags.map(t => <span class="tag tag--green">{t}</span>)}
+          <div class="article-entry-content">
+            <div class="article-meta">
+              <span class="output">-rw-r--r--</span>
+              <span class="highlight">{formatDate(post.data.date)}</span>
+              <span class="command">{post.id}.md</span>
             </div>
+            <div class="article-desc output">{post.data.description}</div>
+            {post.data.tags && (
+              <div class="article-tags">
+                {post.data.tags.map(t => <span class="tag tag--green">{t}</span>)}
+              </div>
+            )}
+          </div>
+          {post.data.image && (
+            <img
+              class="article-thumbnail"
+              src={post.data.image}
+              alt={post.data.imageAlt ?? ''}
+              width="1731"
+              height="909"
+              loading="lazy"
+              decoding="async"
+            />
           )}
         </a>
       ))}
@@ -56,11 +69,25 @@ function formatDate(date: Date) {
     border-bottom: 1px solid var(--border);
   }
   .article-entry {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
     padding: var(--space-2) 0;
     border-bottom: 1px solid var(--border);
     text-decoration: none;
     transition: background 0.15s;
+  }
+  .article-entry-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .article-thumbnail {
+    width: 180px;
+    height: auto;
+    flex-shrink: 0;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 4px;
   }
   .article-entry:last-child {
     border-bottom: none;
@@ -86,6 +113,14 @@ function formatDate(date: Date) {
     margin-top: var(--space-1);
   }
   @media (max-width: 640px) {
+    .article-entry {
+      align-items: stretch;
+      flex-direction: column;
+    }
+    .article-thumbnail {
+      order: -1;
+      width: 100%;
+    }
     .article-meta {
       flex-wrap: wrap;
       gap: var(--space-1);

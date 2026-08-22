@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.14.0 - 2026-08-22
+
+- Add the conceptual ASCII cover for "Context Squared"
+- Support optional blog cover images in article pages, the blog index, and social preview metadata
+
 ## 0.13.1 - 2026-08-22
 
 - Open the external Matt Pocock reference in "Context Squared" in a new tab
