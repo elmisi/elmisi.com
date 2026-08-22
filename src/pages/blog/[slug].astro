@@ -23,8 +23,6 @@ function formatDate(date: Date) {
   title={post.data.title}
   description={post.data.description}
   canonicalPath={`/blog/${post.id}/`}
-  image={post.data.image}
-  imageAlt={post.data.imageAlt}
 >
   <section class="section">
     <div class="section-header">
@@ -44,17 +42,12 @@ function formatDate(date: Date) {
           </div>
         )}
       </div>
-      {post.data.image && (
-        <figure class="article-cover">
-          <img
-            src={post.data.image}
-            alt={post.data.imageAlt ?? ''}
-            width="1731"
-            height="909"
-            decoding="async"
-            fetchpriority="high"
-          />
-        </figure>
+      {post.data.asciiArt && (
+        <pre
+          class="article-ascii-cover"
+          role="img"
+          aria-label={post.data.asciiArtAlt ?? ''}
+        >{post.data.asciiArt}</pre>
       )}
       <div class="article-content">
         <Content />
@@ -86,17 +79,20 @@ function formatDate(date: Date) {
   .article-date {
     margin-bottom: var(--space-1);
   }
-  .article-cover {
+  .article-ascii-cover {
     margin-bottom: var(--space-3);
-    overflow: hidden;
+    padding: var(--space-3) var(--space-1);
+    overflow-x: auto;
     background: var(--bg-primary);
     border: 1px solid var(--border);
     border-radius: 6px;
-  }
-  .article-cover img {
-    display: block;
-    width: 100%;
-    height: auto;
+    color: var(--accent-green);
+    font-family: var(--font-mono);
+    font-size: clamp(0.75rem, 2vw, 0.9375rem);
+    line-height: 1.15;
+    text-align: center;
+    text-shadow: 0 0 6px var(--accent-green-dim);
+    white-space: pre;
   }
   .back-link {
     text-decoration: none;

@@ -9,23 +9,15 @@ interface Props {
   title: string;
   description: string;
   canonicalPath?: string;
-  image?: string;
-  imageAlt?: string;
 }
 
-const { title, description, canonicalPath, image, imageAlt } = Astro.props;
+const { title, description, canonicalPath } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Head
-      title={title}
-      description={description}
-      canonicalPath={canonicalPath}
-      image={image}
-      imageAlt={imageAlt}
-    />
+    <Head title={title} description={description} canonicalPath={canonicalPath} />
   </head>
   <body>
     <Nav />

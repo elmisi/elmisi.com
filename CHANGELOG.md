@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.14.1 - 2026-08-22
+
+- Replace the raster "Context Squared" cover with responsive, text-rendered ASCII art
+- Remove the cover thumbnail from the blog index
+
 ## 0.14.0 - 2026-08-22
 
 - Add the conceptual ASCII cover for "Context Squared"
