@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.16.0 - 2026-08-23
+
+- Add a throne-sofa ASCII cover to "The Last Human Skill"
+- Brighten the shared ASCII palette and regenerate the "Context Squared" cover
+- Document source-image contrast and background rules for reliable ASCII conversion
+
 ## 0.15.0 - 2026-08-23
 
 - Publish the "Context Squared" cover as a responsive HTML image made from real ASCII characters

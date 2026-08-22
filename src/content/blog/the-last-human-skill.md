@@ -3,6 +3,9 @@ title: "The Last Human Skill"
 date: 2026-06-23
 description: "Every 'AI does X, but Y stays human' eventually loses its Y. The one Y that never moves is laziness — the urge to do more with less — backed up by a little arrogance. A semi-serious history of the idea that laziness, not necessity, is the real mother of invention."
 tags: ["ai", "essay", "automation", "laziness", "human-skills"]
+asciiImage:
+  src: "/the-last-human-skill-ascii.html"
+  alt: "An empty throne shaped like a reclining sofa, reconstructed entirely from ASCII characters."
 ---
 
 *Every "AI does X, but Y stays human" eventually loses its Y. The one Y that never moves is laziness — the urge to do more with less — plus a little arrogance. A semi-serious history of the idea that laziness, not necessity, is the mother of invention.*

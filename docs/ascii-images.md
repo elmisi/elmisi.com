@@ -8,6 +8,8 @@ Blog covers use a two-stage process: create a conventional high-resolution bitma
 - Never generate the source from letters, digits, code, grids, or typographic textures. Characters belong only to the conversion stage.
 - Prefer one strong metaphor over a literal diagram. Avoid titles, labels, logos, watermarks, circuit patterns, and falling-code clichés.
 - Use `#0a0e14` for the cover canvas so it merges with the article terminal (`#0d1117` remains the outer page background). Keep subjects in forest green, phosphor green, and restrained mint-white highlights.
+- Keep the background perfectly uniform. Avoid haze, gradients, particles, reflected light, floor glow, bloom, and environmental shadows: after conversion they merge into undifferentiated character masses.
+- Design for the final `180 × 63` sample. Use crisp outer contours, broad tonal steps, and explicit separation between important surfaces; do not rely on subtle gradients or low-contrast details.
 - Fill the frame while preserving a small quiet margin. Covers must merge into the site's black background without a border or visible rectangle.
 
 ## Output Specification
@@ -16,7 +18,7 @@ Blog covers use a two-stage process: create a conventional high-resolution bitma
 - Rendered visual ratio: approximately **1.95:1**, accounting for monospace glyph proportions.
 - Font: self-hosted JetBrains Mono; ligatures disabled.
 - Format: standalone HTML containing a `<pre>` and palette spans—no `<img>`, canvas, Base64 data, JavaScript, or bitmap reference.
-- Palette: `#0a0e14`, `#0b2814`, `#105021`, `#18752e`, `#229b3c`, `#39d353`, `#78e889`, `#d7ffdc`.
+- Palette: `#0a0e14`, `#123f21`, `#197a32`, `#22ad42`, `#32d457`, `#52e875`, `#9af6ae`, `#f0fff2`. The lifted midtones compensate for the empty area inside each glyph; a restrained two-step glow restores phosphor brightness without blurring the character shapes.
 
 ## Generation Procedure
 

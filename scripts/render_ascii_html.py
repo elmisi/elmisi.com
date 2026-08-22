@@ -13,13 +13,13 @@ from PIL import Image, ImageEnhance, ImageOps
 GLYPHS = " .,:;+=xX$#@"
 COLORS = (
     "#0a0e14",
-    "#0b2814",
-    "#105021",
-    "#18752e",
-    "#229b3c",
-    "#39d353",
-    "#78e889",
-    "#d7ffdc",
+    "#123f21",
+    "#197a32",
+    "#22ad42",
+    "#32d457",
+    "#52e875",
+    "#9af6ae",
+    "#f0fff2",
 )
 
 
@@ -155,7 +155,9 @@ def main() -> None:
         font-weight: 400;
         letter-spacing: 0;
         line-height: 0.88;
-        text-shadow: 0 0 0.55em currentColor;
+        text-shadow:
+          0 0 0.35em currentColor,
+          0 0 0.9em rgb(57 211 83 / 35%);
         user-select: text;
       }}
 
