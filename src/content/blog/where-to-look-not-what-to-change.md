@@ -3,6 +3,9 @@ title: "Where to Look, Not What to Change"
 date: 2026-05-09
 description: "Why asking Claude for refactorings kept producing surface-level answers, and what changed when I asked it to find places worth investigating."
 tags: ["claude-code", "ai", "refactoring", "workflow", "code-quality"]
+asciiImage:
+  src: "/where-to-look-not-what-to-change-ascii.html"
+  alt: "A luminous green eye with a faceted iris floating in a perfectly uniform dark void."
 ---
 
 *Why I stopped asking Claude for refactorings and started asking it for places worth investigating.*
