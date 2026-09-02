@@ -5,7 +5,7 @@ description: "Why asking Claude for refactorings kept producing surface-level an
 tags: ["claude-code", "ai", "refactoring", "workflow", "code-quality"]
 asciiImage:
   src: "/where-to-look-not-what-to-change-ascii.html"
-  alt: "A luminous green eye with a faceted iris floating in a perfectly uniform dark void."
+  alt: "A large luminous green eye with a faceted iris filling most of a perfectly uniform dark void."
 ---
 
 *Why I stopped asking Claude for refactorings and started asking it for places worth investigating.*
