@@ -70,11 +70,85 @@ does not concretely change the image.
 
 ## Cover constraints (from `ascii-images.md`)
 
-- 16:9, canvas `#0a0e14`, subject in forest/phosphor green with restrained mint-white highlights.
+- 16:9, subject fills the frame with a small quiet margin.
 - Perfectly uniform background: no gradient, haze, particles, floor glow, reflections, bloom, environmental shadows.
 - No letters, digits, code, grids, typographic textures, titles, labels, logos, watermarks.
 - One strong metaphor, crisp outer contours, broad tonal steps, explicit separation between surfaces.
-- Subject fills the frame with a small quiet margin.
+
+### Do not impose the green palette on the model
+
+The bitmap is generated in **neutral colors** (subject + composition +
+uniform dark background + soft volumetric light). The phosphor-green
+palette is applied **only by the converter**: `render_ascii_html.py`
+maps luminance to its fixed 8-step green palette, so whatever hue the
+model used becomes green after conversion. Asking the model for
+"phosphor green / forest green / mint-white" makes it fight the
+instruction and produce off-tone, low-contrast subjects. Keep color
+language out of the prompt; keep subject, framing, background and
+light.
+
+If the subject needs a nudge (too small, too dark, too much glow at
+the borders), adjust the PNG locally (contrast, luminance, crop) and
+re-run the converter — do not regenerate the whole image.
+
+## Converting
+
+```bash
+python3 scripts/render_ascii_html.py \
+  assets/ascii-sources/<slug>.png \
+  public/<slug>-ascii.html \
+  --title "<Article title> — ASCII cover" \
+  --alt "<one-line description>" \
+  --columns 180 \
+  --height-scale 0.88
+```
+
+### Choosing `--height-scale`
+
+The converter samples a matrix of `--columns` × `rows` where
+`rows = round(width / height * columns * height_scale)`. A monospace
+glyph is roughly 1:0.62 (height:width), so:
+
+| Subject shape | `--height-scale` | Resulting matrix |
+|---|---|---|
+| **Square / round** (gears, eyes, spheres, cubes) | `0.88` | 180×91 — preserves the subject's roundness |
+| **Tall** (obelisks, columns, towers) | `0.62` | 180×64 — matches the subject's vertical proportion |
+| **Wide / landscape** (horizons, wide scenes) | `0.55–0.62` | 180×58–64 |
+
+A wrong scale **squashes** the subject in the ASCII matrix (e.g. a
+round gear at `0.62` becomes a flat disc). Match the scale to the
+subject's bounding-box ratio.
+
+### Subject must fill the frame
+
+After conversion the subject should occupy most of the matrix.
+Heuristic: the subject's bounding box in the source PNG should be at
+least **~50% of the width and ~67% of the height**; coverage
+(luminance ≥ 40) of ~20% or more. If the subject is small with large
+margins, the ASCII matrix has many empty rows — regenerate with a
+prompt that says "fills the frame / edge to edge" rather than
+"centered with a quiet margin".
+
+## Workflow
+
+One article at a time. For each article:
+
+1. Pick **one strong metaphor** for the article (see the article's
+   thesis, not its title).
+2. Draft **one prompt per candidate backend** (usually just
+   `sdcpp-flux2-klein-4b` unless the article needs a specific style),
+   following that backend's discipline above. **No color words** in
+   the prompt.
+3. Generate at least **2–3 seeds** so you can pick the best subject
+   framing (the model's composition varies with the seed).
+4. Convert every candidate to ASCII with `render_ascii_html.py` using
+   the right `--height-scale` for the subject shape.
+5. Compare the **ASCII results**, not the bitmaps — the ASCII matrix
+   is what the reader sees.
+6. Keep the winner as `assets/ascii-sources/<slug>.png`, regenerate
+   `public/<slug>-ascii.html`, add the `asciiImage` frontmatter,
+   `npm run build`, verify the cover is inlined in
+   `dist/blog/<slug>/index.html`.
 
 ## Generating a cover
 
@@ -102,18 +176,5 @@ curl -s -X POST https://amigo.elmisi.com/api/generate \
 by `sdcpp-flux2-klein-4b` — bake the exclusions into the prompt for
 Flux.
 
-Save the chosen source under `assets/ascii-sources/<slug>.png`, then
-convert with `scripts/render_ascii_html.py` and add the `asciiImage`
-frontmatter (see `ascii-images.md`).
 
-## Workflow
 
-One article at a time. For each article:
-
-1. Draft one prompt per candidate backend, following that backend's
-   discipline above.
-2. Generate all candidates (same seed where comparable).
-3. Convert every candidate to ASCII with `render_ascii_html.py`.
-4. Compare the **ASCII results**, not the bitmaps — the ASCII matrix
-   is what the reader sees.
-5. Keep the winner as `assets/ascii-sources/<slug>.png`.
