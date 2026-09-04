@@ -3,6 +3,9 @@ title: "The Missing Variable: Oligarchic Agency in the 2028 Global Intelligence 
 date: 2026-03-29
 description: "A response to Citrini Research's crisis scenario — introducing the actor the original analysis forgot: the oligarchies actively shaping the AI transition."
 tags: ["ai", "economics", "oligarchy", "geopolitics"]
+asciiImage:
+  src: "/the-missing-variable-ascii.html"
+  alt: "A large faceted gear filling the frame, its teeth glowing with a soft phosphor light."
 ---
 
 *A response to Citrini Research's "The 2028 Global Intelligence Crisis" — introducing the actor the original scenario forgot.*
