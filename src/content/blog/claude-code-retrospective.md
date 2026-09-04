@@ -3,6 +3,9 @@ title: "Claude Code Retrospective"
 date: 2026-03-25
 description: "What I learned by having Claude Code analyze the way I work — and why 80% of AI plans failed wasn't the model's fault."
 tags: ["claude-code", "ai", "workflow"]
+asciiImage:
+  src: "/claude-code-retrospective-ascii.html"
+  alt: "A luminous compass with a bright needle resting on a dim map with few muted lines."
 ---
 
 *What I learned by having Claude Code analyze the way I work.*
